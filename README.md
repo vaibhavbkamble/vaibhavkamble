@@ -1,4 +1,4 @@
-# vaibhavkamble
+# JavaTest
 
 Q1: Merge two arrays by satisfying given constraints
 Given two sorted arrays X[] and Y[] of size m and n each where m >= n and X[] has exactly n vacant cells,
