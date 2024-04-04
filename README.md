@@ -16,17 +16,14 @@ public class MergeArrays {
     public static void main(String[] args) {
         int[] X = {0, 2, 0, 3, 0, 5, 6, 0, 0};
         int[] Y = {1, 8, 9, 10, 15};
-
-        mergeArrays(X, Y);
+       mergeArrays(X, Y);
         System.out.println(Arrays.toString(X));
     }
-
     public static void mergeArrays(int[] X, int[] Y) {
         int i = X.length - Y.length - 1;
         int j = Y.length - 1;
         int k = X.length - 1;
-
-        while (j >= 0) {
+      while (j >= 0) {
             if (i >= 0 && X[i] > Y[j]) {
                 X[k] = X[i];
                 i--;
@@ -56,16 +53,13 @@ public class MaxSumPath {
     public static void main(String[] args) {
         int[] X = {3, 6, 7, 8, 10, 12, 15, 18, 100};
         int[] Y = {1, 2, 3, 5, 7, 9, 10, 11, 15, 16, 18, 25, 50};
-
         int maxSum = findMaxSumPath(X, Y);
         System.out.println("The maximum sum path involving elements of both arrays is: " + maxSum);
     }
-
     public static int findMaxSumPath(int[] X, int[] Y) {
         int i = 0, j = 0;
         int sumX = 0, sumY = 0;
         int result = 0;
-
         while (i < X.length && j < Y.length) {
             if (X[i] < Y[j]) {
                 sumX += X[i];
@@ -81,7 +75,6 @@ public class MaxSumPath {
                 j++;
             }
         }
-
         while (i < X.length) {
             sumX += X[i];
             i++;
@@ -90,7 +83,6 @@ public class MaxSumPath {
             sumY += Y[j];
             j++;
         }
-
         result += Math.max(sumX, sumY);
         return result;
     }
@@ -107,15 +99,12 @@ public class WordCount {
         int wordCount = countWords(inputString);
         System.out.println("Number of words in the string: " + wordCount);
     }
-
     public static int countWords(String s) {
         String[] words = s.split("\\s+");
         Map<String, Integer> wordFrequency = new HashMap<>();
-
         for (String word : words) {
             wordFrequency.put(word, wordFrequency.getOrDefault(word, 0) + 1);
         }
-
         return wordFrequency.size();
     }
 }
@@ -131,11 +120,9 @@ public class DuplicateCharacters {
         Set<Character> duplicates = findDuplicateCharacters(inputString);
         System.out.println("Duplicate characters: " + duplicates);
     }
-
     public static Set<Character> findDuplicateCharacters(String s) {
         Set<Character> charSet = new HashSet<>();
         Set<Character> duplicates = new HashSet<>();
-
         for (char c : s.toCharArray()) {
             if (charSet.contains(c)) {
                 duplicates.add(c);
@@ -143,7 +130,6 @@ public class DuplicateCharacters {
                 charSet.add(c);
             }
         }
-
         return duplicates;
     }
 }
